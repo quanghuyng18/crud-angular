@@ -1,0 +1,16 @@
+{
+  "employees": [
+    {
+      "firstName": "Nguyen",
+      "lastName": "Quang Huy",
+      "email": "quanghuy@gmail.com",
+      "dob": "18/09/2001",
+      "gender": "male",
+      "education": "Intermediate",
+      "company": "IT",
+      "experience": "18",
+      "package": "9",
+      "id": 1
+    }
+  ]
+}
