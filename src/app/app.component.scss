@@ -3,13 +3,10 @@
 }
 
 .main-body {
-    max-width: 1248px;
+    padding-top: 20px;
+    max-width: 1348px;
     margin: 0 auto;
-    max-form-field {
-        width: 100%;
+    mat-form-field {
+       width: 100%;
     }
-}
-
-.filter {
-    width: 100%;
 }

@@ -2,15 +2,15 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { EmpAddEditComponent } from './emp-add-edit/emp-add-edit.component';
 import { EmployeeService } from './services/employee.service';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { CoreService } from './core/core.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
   displayedColumns: string[] = [
@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
     'company',
     'experience',
     'package',
-    'action'
+    'action',
   ];
   dataSource!: MatTableDataSource<any>;
 
@@ -35,11 +35,15 @@ export class AppComponent implements OnInit {
     private _dialog: MatDialog,
     private _empService: EmployeeService,
     private _coreService: CoreService
-    ) {}
+  ) {}
 
-    ngOnInit(): void {
-      this.getEmployeeList();
-    }
+  ngOnInit(): void {
+    this.getEmployeeList();
+  }
+
+  reloadPage() {
+    location.reload();
+  }
 
   openAddEditEmpForm() {
     const dialogRef = this._dialog.open(EmpAddEditComponent);
@@ -48,8 +52,8 @@ export class AppComponent implements OnInit {
         if (val) {
           this.getEmployeeList();
         }
-      }
-    })
+      },
+    });
   }
 
   getEmployeeList() {
@@ -86,13 +90,13 @@ export class AppComponent implements OnInit {
     const dialogRef = this._dialog.open(EmpAddEditComponent, {
       data,
     });
-    
+
     dialogRef.afterClosed().subscribe({
       next: (val) => {
         if (val) {
           this.getEmployeeList();
         }
-      }
-    })
+      },
+    });
   }
 }

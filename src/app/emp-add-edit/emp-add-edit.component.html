@@ -1,5 +1,6 @@
 <div mat-dialog-title>
     <h1>Employee Form</h1>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 </div>
 <form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
 <div mat-dialog-content class="content">
@@ -20,16 +21,16 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Date of birth</mat-label>
-            <input matInput type="text" placeholder="18/09/2001" formControlName="dob">
+            <input matInput type="date" placeholder="18/09/2001" formControlName="dob">
             <mat-hint>DD/MM/YYYY</mat-hint>
         </mat-form-field>
     </div>
     <div class="row">
         <mat-radio-group aria-label="Select an option" color="primary" formControlName="gender">
             <mat-label><b>Gender</b></mat-label>
-            <mat-radio-button value="male">Male</mat-radio-button>
-            <mat-radio-button value="female">Female</mat-radio-button>
-            <mat-radio-button value="other">Other</mat-radio-button>
+            <mat-radio-button value="Male">Male</mat-radio-button>
+            <mat-radio-button value="Female">Female</mat-radio-button>
+            <mat-radio-button value="Other">Other</mat-radio-button>
         </mat-radio-group>
     </div>
     <div class="row">
@@ -43,7 +44,7 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Company</mat-label>
-            <input matInput type="text" placeholder="Quang Huy" formControlName="company">
+            <input matInput type="text" placeholder="Company" formControlName="company">
         </mat-form-field>
     </div>
     <div class="row">
@@ -61,7 +62,7 @@
 <div mat-dialog-actions class="action">
     <button mat-raised-button type="button"
         [mat-dialog-close]="false">Cancel
-        
+
     </button>
     <button mat-raised-button color="primary" type="submit">{{data ? 'Update': 'Save'}}</button>
 </div>
